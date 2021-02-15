@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Koombea</string>
+    <!--SPLASH ACTIVITY-->
+    <string name="textoSplash">Test Ramiro Garrido M.</string>
+    <string name="cdLogoSplash">Logo empresa Koombea</string>
+    <!--MAIN-->
+    <string name="cdImagenNoData">Imagen sin datos para mostrar</string>
+    <!--RECYCLERVIEW CHILD OPCION1-->
+    <string name="cdImagenHeaderRVC">Imagen del usuario que postea</string>
+    <string name="cdImagenRVC">Imagen posteada por usuario</string>
+    <!--MENSAJES-->
+    <string name="cargaOffline">Inicia carga offline con los datos que se alcanzaron a descargar</string>
+    <string name="noExistenDatos">No existen datos para cargar. Internet necesario para la primera carga.</string>
+</resources>

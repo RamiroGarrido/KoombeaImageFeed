@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="mainViewModel"
+            type="col.rgm.koombea.main.MainViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ProgressBar
+            android:id="@+id/progressbarMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/darkGreen"
+            android:visibility="@{mainViewModel.progressBarVisibility}" />
+
+        <ImageView
+            android:id="@+id/imagenMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/translucent_black"
+            android:contentDescription="@string/cdImagenRVC"
+            android:scaleType="centerInside"
+            android:tag="@string/cdImagenRVC"
+            android:visibility="@{mainViewModel.imagenMainVisibility}" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayoutMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="@{mainViewModel.mainContainerVisibility}"
+            >
+
+            <RelativeLayout
+                android:id="@+id/containerMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/no_data3"
+                    android:scaleType="centerInside"
+                    android:contentDescription="@string/cdImagenNoData"
+                    android:visibility="@{mainViewModel.imagenSinDatosVisibility}"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:scrollbars="vertical"
+                    android:visibility="@{mainViewModel.recyclerViewVisibility}"
+                     />
+            </RelativeLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </RelativeLayout>
+</layout>

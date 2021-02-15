@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/imagenRVHCOpc4"
+    android:layout_width="@dimen/imageHeight3"
+    android:layout_marginEnd="@dimen/imagePadding"
+    android:layout_height="match_parent"
+    android:contentDescription="@string/cdImagenRVC"
+    android:scaleType="fitXY"
+    android:src="@drawable/imagen_vacia"
+    />
+

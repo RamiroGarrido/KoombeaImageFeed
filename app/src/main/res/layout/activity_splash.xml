@@ -1,0 +1,35 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/splash_container"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"
+            android:scaleType="fitCenter"
+            android:id="@+id/taxisLibresLogo"
+            android:layout_gravity="center"
+            android:contentDescription="@string/cdLogoSplash"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textoSplash"
+            android:id="@+id/bibliotecAppLogo"
+            android:layout_gravity="center"
+            android:padding="@dimen/paddingSplash"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:textSize="@dimen/letraSplash"
+            />
+    </LinearLayout>
+</RelativeLayout>

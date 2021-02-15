@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#00FF00</color>
+    <color name="blue">#0000FF</color>
+    <color name="lightBlack">#1C1C1C</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="darkRed">#8B0000</color>
+    <color name="darkGreen">#006400</color>
+    <color name="darkBlue">#00008B</color>
+    <color name="darkTurquoise">#00ced1</color>
+    <color name="mediumTurquoise">#48d1cc</color>
+    <color name="turquoise">#40e0d0</color>
+    <color name="skyBlue">#87ceeb</color>
+    <color name="golden">#FFD700</color>
+    <color name="darkGolden">#DAA520</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="lightCyan">#CCFFFF</color>
+    <color name="orange">#FFA500</color>
+    <color name="gray">#BEBEBE</color>
+    <color name="darkGray">#A9A9A9</color>
+    <color name="darkerGray">#585858</color>
+    <color name="lightGreenSea">#20B2AA</color>
+    <color name="royalBlue">#4169E1</color>
+    <color name="steelBlue">#4682b4</color>
+    <color name="darkSlateBlue">#483d8b</color>
+    <color name="transparent">#00000000</color>
+    <color name="translucent_black">#E6000000</color>
+</resources>

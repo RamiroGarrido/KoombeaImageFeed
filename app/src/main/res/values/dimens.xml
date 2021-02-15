@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--SPLASH-->
+    <dimen name="letraSplash">20sp</dimen>
+    <dimen name="paddingSplash">5dp</dimen>
+    <!--RECYCLERVIEW CHILD OPCION 1-->
+    <dimen name="cardHeight">400dp</dimen>
+    <dimen name="cardCornerRadius">25dp</dimen>
+    <dimen name="cardPadding">5dp</dimen>
+    <dimen name="headerHeight">80dp</dimen>
+    <dimen name="imageUser">60dp</dimen>
+    <dimen name="imageHeight">320dp</dimen>
+    <dimen name="imagePadding">2dp</dimen>
+    <dimen name="marginTexto">5dp</dimen>
+    <dimen name="rvco1texto1">11sp</dimen>
+    <dimen name="rvco1texto2">9sp</dimen>
+    <!--RECYCLERVIEW CHILD OPCION 2-->
+    <dimen name="imageHeight2">150dp</dimen>
+    <dimen name="marginTop">10dp</dimen>
+    <!--RECYCLERVIEW CHILD OPCION 3-->
+    <dimen name="imageHeight3">130dp</dimen>
+</resources>
