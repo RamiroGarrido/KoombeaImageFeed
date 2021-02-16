@@ -19,6 +19,7 @@ import com.couchbase.lite.Database
 import com.couchbase.lite.MutableDocument
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import java.io.InputStream
 import java.net.HttpURLConnection
@@ -30,6 +31,7 @@ class MainViewModel(
     private val constantes: Constantes
 ) :
     ViewModel() {
+    private var jobGuardarDatos:Job?=null
     private var asyntaskHelper: AsyncTask<UsuariosDTO, Unit, Unit>? = null
     var mutableDoc: MutableDocument? = null
     private var gson: Gson = Gson()
@@ -80,7 +82,7 @@ class MainViewModel(
     //Guarda los datos obtenidos via webservice e inicia la descarga async de imagenes para guardar en BD
     fun guardarDatosEnBD(datosObtenidos: UsuariosDTO) {
         try {
-            viewModelScope.launch {
+            jobGuardarDatos = viewModelScope.launch {
                 //Se serializan los datos de BD a JSON y se guardan en BD
                 val json = gson.toJson(datosObtenidos)
                 mutableDoc = MutableDocument()
@@ -90,6 +92,7 @@ class MainViewModel(
             }
         } catch (e: Exception) {
             asyntaskHelper?.cancel(false)
+            jobGuardarDatos?.cancel(null)
             Log.i(constantes.TAG_GENERAL, e.message!!)
         }
     }
@@ -120,13 +123,18 @@ class MainViewModel(
                     mutableDoc!!.getBlob(llaveBlob)
                 //Si la imagen existe, es porque se alcanzó a descargar antes de perder el internet
                 if(pic != null) {
-                    val picByteArray = pic.content
-                    var bitMap = BitmapFactory.decodeByteArray(
-                        picByteArray,
-                        0,
-                        picByteArray!!.size
-                    )
-                    imageView.setImageBitmap(bitMap)
+                    if(pic.length()>0) {
+                        val picByteArray = pic.content
+                        var bitMap = BitmapFactory.decodeByteArray(
+                            picByteArray,
+                            0,
+                            picByteArray!!.size
+                        )
+                        imageView.setImageBitmap(bitMap)
+                    }
+                    else{
+                        imageView.setImageResource(R.drawable.imagen_vacia)
+                    }
                 }
                 //Si la imagen no existe, se coloca la imagen por defecto
                 else{
@@ -199,5 +207,6 @@ class MainViewModel(
     //Cancela la descarga asyncrona de imagenes
     fun cancelarDescargaImagenesAsync() {
         asyntaskHelper?.cancel(false)
+        jobGuardarDatos?.cancel(null)
     }
 }
